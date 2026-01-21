@@ -6,7 +6,7 @@ def blog(request):
     print('blog')
 
     context = {
-    'text': 'Welcome to the blog'
+    'text': 'Welcome to the blog',
     }
 
     return render(
