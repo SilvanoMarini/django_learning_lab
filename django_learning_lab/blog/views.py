@@ -16,6 +16,19 @@ def blog(request):
         context=context,
     )
 
+def post(request, id):
+    print('post', id)
+
+    context = {
+    'posts': posts
+    }
+
+    return render(
+        request=request,
+        template_name='blog/index.html',
+        context=context,
+    )
+
 
 
 def example(request):
