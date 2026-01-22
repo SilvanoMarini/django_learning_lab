@@ -1,4 +1,5 @@
 from blog.data import posts
+from django.http import Http404, HttpRequest
 from django.shortcuts import render
 
 # Create your views here.
@@ -16,7 +17,7 @@ def blog(request):
         context=context,
     )
 
-def post(request, post_id):
+def post(request: HttpRequest, post_id: int):
     print('post', post_id)
     found_post = None
 
@@ -27,7 +28,7 @@ def post(request, post_id):
 
 
     if found_post is None:
-        raise Exception('Post not found')
+        raise Http404('Post not found')
 
 
     context = {
