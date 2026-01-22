@@ -16,16 +16,28 @@ def blog(request):
         context=context,
     )
 
-def post(request, id):
-    print('post', id)
+def post(request, post_id):
+    print('post', post_id)
+    found_post = None
+
+    for post in posts:
+        if post['id'] == post_id:
+            found_post = post
+            break
+
+
+    if found_post is None:
+        raise Exception('Post not found')
+
 
     context = {
-    'posts': posts
+    'post': found_post,
+    'title': found_post['title'] + ' - ',
     }
 
     return render(
         request=request,
-        template_name='blog/index.html',
+        template_name='blog/post.html',
         context=context,
     )
 
