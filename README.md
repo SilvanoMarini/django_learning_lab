@@ -59,11 +59,27 @@ The following topics are studied and implemented throughout this repository:
 The repository follows Django’s standard project and app structure.  
 Files and folders may change as new lessons are completed and concepts are refined.
 
+### Apps
+- **home**: Handles the homepage with a welcome message.
+- **blog**: Manages blog posts, including listing and individual post views. Currently uses hardcoded data from `blog/data.py` instead of Django models.
+- **base**: Contains global templates (e.g., base.html, partials) and static files (CSS) shared across the project.
+
+## ✨ Current Features
+
+- **Homepage**: Simple welcome page at the root URL.
+- **Blog Index**: Displays a list of posts with titles and summaries.
+- **Post Details**: Individual pages for each post, accessible via dynamic URLs.
+- **Navigation**: Basic menu and layout using template inheritance.
+- **Styling**: Global CSS for responsive design and basic aesthetics.
+- **Error Handling**: Custom 404 for non-existent posts.
+
+*Note: Data is currently mocked; future updates may introduce real models and database integration.*
+
 ## 🚀 How to Run Locally
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/django-learning-lab.git
+git clone https://github.com/SilvanoMarini/django_learning_lab.git
 ```
 
 ### 2. Navigate to the project directory
